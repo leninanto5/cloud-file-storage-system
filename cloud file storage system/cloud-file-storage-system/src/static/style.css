@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f3f5f9; color: #222; }
+nav { display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 28px; background: #2f4ea2; color: #fff; }
+nav a { color: #fff; }
+.brand { font-weight: bold; font-size: 18px; }
+main { max-width: 860px; margin: 28px auto; padding: 0 16px; }
+.card { background: #fff; padding: 22px; border-radius: 10px; margin-bottom: 20px;
+        box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.card.narrow { max-width: 380px; margin: 60px auto; }
+input[type=text], input[type=password] { width: 100%; padding: 10px; margin-bottom: 12px;
+        border: 1px solid #ccd; border-radius: 6px; }
+button, .btn { background: #2f4ea2; color: #fff; border: 0; padding: 9px 16px;
+        border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; }
+button.danger { background: #c0392b; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
+.actions { display: flex; gap: 8px; }
+.actions form { margin: 0; }
+.flash { padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; }
+.flash.success { background: #e3f6e8; color: #1e6b34; }
+.flash.error { background: #fde8e8; color: #a12626; }
+.muted { color: #777; }

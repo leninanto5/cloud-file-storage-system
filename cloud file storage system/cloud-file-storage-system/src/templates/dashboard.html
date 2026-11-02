@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}My Files{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Upload a file</h2>
+  <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data" class="row">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>My files ({{ files|length }})</h2>
+  {% if files %}
+  <table>
+    <thead><tr><th>Name</th><th>Size</th><th>Modified</th><th>Actions</th></tr></thead>
+    <tbody>
+      {% for f in files %}
+      <tr>
+        <td>{{ f.name }}</td>
+        <td>{{ f.size }}</td>
+        <td>{{ f.modified }}</td>
+        <td class="actions">
+          <a class="btn" href="{{ url_for('download', filename=f.name) }}">Download</a>
+          <form method="post" action="{{ url_for('delete', filename=f.name) }}"
+                onsubmit="return confirm('Delete {{ f.name }}?');">
+            <button type="submit" class="danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="muted">No files yet. Upload your first file above.</p>
+  {% endif %}
+</div>
+{% endblock %}
